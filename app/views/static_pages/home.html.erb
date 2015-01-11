@@ -1,6 +1,14 @@
-<h1><a href="http://www.ebay.ca/itm/Kevin-Bieksa-Rookie-Card-478-UD-Young-Guns-05-06-Vancouver-/151528552537" target="_blank">
-Kevin Bieksa</a> - Vancouver</h1>
-<p><a href="/static_pages/about.html">About Discover Hockey</a></p>
-<%= image_tag "bieksa-canucks.jpg" %>
-<h1>StaticPages#home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
+<div class="center jumbotron">
+
+  <h2><a href="http://www.ebay.ca/itm/Kevin-Bieksa-Rookie-Card-478-UD-Young-Guns-05-06-Vancouver-/151528552537" target="_blank">
+Kevin Bieksa</a> - Vancouver</h2>
+  <h2><a href="/static_pages/about.html">About Discover Hockey</a></h2>
+
+  <%= link_to "Sign up now!", '#', class: "btn btn-lg btn-primary" %>
+
+</div>
+
+
+<%= link_to image_tag("bieksa-canucks.jpg", alt: "Bieksa photo"), "http://www.ebay.ca/itm/Kevin-Bieksa-Rookie-Card-478-UD-Young-Guns-05-06-Vancouver-/151528552537" %>
+
+<%= link_to image_tag("rails.png", alt: "Rails logo"), 'http://rubyonrails.org/' %>
