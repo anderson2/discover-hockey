@@ -1,46 +1,27 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title><%= full_title(yield(:title)) %></title>
-
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <title><%= full_title(yield(:title)) %></title>
   
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-    <!--[if lt IE 9]>
-      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
-      </script>
-    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     
-</head>
-
-<body>
-  
-  <header class="navbar navbar-fixed-top navbar-inverse">
-    <div class="container">
-
-      <%= link_to "Discover Hockey", '/', id: "logo" %>
-      <nav>
-        <ul class="nav navbar-nav navbar-right">
-          <li><%= link_to "Home",   '/' %></li>
-          <li><%= link_to "About",   '/static_pages/about.html' %></li>
-          <li><%= link_to "Log in", '#' %></li>
-        </ul>
-      </nav>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    
+    <%= render "layouts/shim" %>
       
-    </div>
-  </header>
+  </head>
 
-<!-- To do - implement mobile friendly nav bar
-http://getbootstrap.com/components/#navbar
--->
+  <body>
+    <%= render "layouts/header" %>
 
-
-    
     <div class="container">
       <%= yield %>
+      <%= render "layouts/footer" %>
+     
     </div>
     
-</body>
+  </body>
+  
 </html>
