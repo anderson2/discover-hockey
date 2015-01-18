@@ -15,6 +15,8 @@ class PeopleController < ApplicationController
     @person = Person.new(person_params)
     if @person.save
       # Handle a successful save
+      log_in @person
+      
       flash[:success] = "Welcome to Discover Hockey!!"
       redirect_to @person
       
