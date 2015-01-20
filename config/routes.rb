@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   #get 'people/new'
   get     'signup'  => 'people#new'
   
+  
   #get 'sessions/new'
   get     'login'   => 'sessions#new'
   post    'login'   => 'sessions#create'
@@ -16,6 +17,7 @@ Rails.application.routes.draw do
 
 
   resources :people
+  # view created routes with: bundle exec rake routes
   
 end
 

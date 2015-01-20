@@ -13,6 +13,14 @@ module SessionsHelper
     cookies.permanent[:remember_token] = person.remember_token
   end
 
+  # Boolean test to prevent a logged in user (person) 
+  # from editing anothers user's info.
+  # Returns true if the given user is the current user
+  def current_person?(person)
+    person == current_person
+  end
+
+
   # Return the current logged-in user (if any).
   # def current_person
   #   @current_person ||= Person.find_by(id: session[:person_id])
@@ -56,6 +64,17 @@ module SessionsHelper
     session.delete(:person_id)
     @current_person = nil
     
+  end
+
+  # Redirects to stored location (or to the default).
+  def redirect_back_or(default)
+    redirect_to(session[:forwarding_url] || default)
+    session.delete(:forwarding_url)
+  end
+
+  # Stores the URL trying to be accessed.
+  def store_location
+    session[:forwarding_url] = request.url if request.get?
   end
   
 end

@@ -13,7 +13,8 @@ class SessionsController < ApplicationController
       # Enable persistent sessions if 'Stay signed in' box is checked
       params[:session][:remember_me] == '1' ? remember(person) : forget(person)
       
-      redirect_to person
+      # redirect_to person
+      redirect_back_or person
       
     else
       flash.now[:danger] = 'Invalid email/password combination'
