@@ -12,6 +12,38 @@ Kevin Bieksa</a> - Vancouver</h3>
 <!--  <h2><a href="/static_pages/about.html">About Discover Hockey</a></h2> -->
   <h2><%= link_to "About Discover Hockey", about_path %></h2>
 
-</div>
+
 
 <!-- <%= link_to image_tag("rails.png", alt: "Rails logo"), 'http://rubyonrails.org/' %> -->
+
+
+  <h5>
+    <!-- modal -->
+    <a data-toggle="modal" data-target="#myModal2">
+      Preview beta site
+    </a>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Select an option</h4>
+          </div>
+          <div class="modal-body">
+            <h4><%= link_to "Preview as Beta Guest", login_path %></h4>
+            <h4><%= link_to "Create beta user account", signup_path %></h4>
+          </div>
+          <!--
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+          -->
+          
+        </div>
+      </div>
+    </div>
+  </h5>
+  
+  </div>

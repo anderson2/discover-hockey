@@ -7,7 +7,7 @@ Optionally, site users can link to eBay to buy, sell or trade cards.
 
 The app extends concepts learned from completing:
 
-- [The Ruby on Rails Tutorial](https://www.railstutorial.org/book) (*view completed tutorial on* [*Heroku*](https://gentle-gorge-9313.herokuapp.com))
+- [The Ruby on Rails Tutorial](https://www.railstutorial.org/book)
 
 - [The RailsGuide Blog Tutorial](http://guides.rubyonrails.org)
 

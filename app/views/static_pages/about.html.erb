@@ -3,14 +3,14 @@
 <div class="center">
   <h1>About Discover Hockey</h1>
 
-  <h3>
+  <h4>
     <%= link_to "Discover Hockey", root_path %> is a site designed for hockey card enthusiasts. 
     Optionally, site users can link to 
     <a href="http://stores.ebay.ca/Garrison-Hockey-Cards/Vancouver-Canucks-/_i.html?_fsub=20625816" target="_blank">Garrison Cards</a>
     on eBay to buy, sell or trade cards.
-  </h3>
+  </h4>
 
-
+  
 
 <div class="center jumbotron">
   <%= image_tag "turris-coyotes.jpg" %>
@@ -23,4 +23,35 @@
     It is very much a work in progress ...
   </p>
 
+</div>
+
+<div>
+  <h2>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+      Preview beta site
+    </button>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Select an option</h4>
+          </div>
+          <div class="modal-body">
+            <h4><%= link_to "Preview as Beta Guest", login_path %></h4>
+            <h4><%= link_to "Create beta user account", signup_path %></h4>
+          </div>
+          <!--
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+          -->
+          
+        </div>
+      </div>
+    </div>
+  </h2>
 </div>
