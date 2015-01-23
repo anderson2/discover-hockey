@@ -9,7 +9,8 @@
 Person.create!(name:  "Example User",
              email: "example@railstutorial.org",
              password:              "foobar",
-             password_confirmation: "foobar")
+             password_confirmation: "foobar",
+             admin: true)
 
 Person.create!(name:  "Beta Guest",
              email: "beta.guest@discover.hockey",
