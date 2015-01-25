@@ -14,7 +14,7 @@ class SiteLayoutTest < ActionDispatch::IntegrationTest
     assert_select "a[href=?]", about_path
     assert_select "a[href=https://github.com/anderson2]", contact_path
     
-    assert_select "a[href=?]", signup_path, count: 2
+    assert_select "a[href=?]", signup_path, count: 1
 
     
   end

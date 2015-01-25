@@ -3,16 +3,32 @@
 <!-- <%= @person.name %>, <%= @person.email %>  -->
 
 <div class = "row">
+
   <aside class = "col-md-4">
+
+
     <section class = "person_info">
       <h1>
         <%= gravatar_for @person %>
         <%= @person.name %>
       </h1>
       
+      <p>About <%= @person.name%></p>
+      <p>Here's some info about me!</p>
+      
     </section>
     
   </aside>
 
+  <div class="col-md-8">
+    <% if @person.posts.any? %>
+      <h3>Posts (<%= @person.posts.count %>)</h3>
+      <ol class="posts">
+        <%= render @posts %>
+      </ol>
+      <%= will_paginate @posts %>
+    <% end %>
+  </div>
+  
 </div>
 

@@ -6,13 +6,14 @@ class PeopleController < ApplicationController
 
 
   def index
-    @people = Person.paginate(page: params[:page], :per_page => 10)
+    @people = Person.paginate(page: params[:page], :per_page => 7)
 
     
   end
 
   def show
     @person = Person.find(params[:id])
+    @posts = @person.posts.paginate(page: params[:page], :per_page => 5)
     
     #debugger
     
@@ -71,15 +72,7 @@ class PeopleController < ApplicationController
     
     # Before filters
 
-    # Confirms a logged-in user.
-    def logged_in_person
-      unless logged_in?
-        store_location
-        flash[:danger] = "Please sign in to continue"
-        redirect_to login_url
-        
-      end
-    end
+
     
     # Confirms the correct user.
     def correct_person

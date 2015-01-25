@@ -1,67 +1,81 @@
-
-
-<div class="center jumbotron">
-  <div class="center primary-graphic">
-    <%= link_to image_tag("bieksa-canucks.jpg", alt: "Bieksa photo"), "http://www.ebay.ca/itm/Kevin-Bieksa-Rookie-Card-478-UD-Young-Guns-05-06-Vancouver-/151528552537" %>
-    
-    <h3><a href="http://www.ebay.ca/itm/Kevin-Bieksa-Rookie-Card-478-UD-Young-Guns-05-06-Vancouver-/151528552537" target="_blank">
-Kevin Bieksa</a> - Vancouver</h3>
-
+<% if logged_in? %>
+  <div class="row">
+    <aside class="col-md-4">
+      <section class="person_info">
+        <%= render 'shared/person_info' %>
+      </section>
+      <section class="post_form">
+        <%= render 'shared/post_form' %>
+      </section>
+    </aside>
   </div>
   
-</div>
-
-
-<div class="center primary-greeting">
-  <h1>CANUCKS FAN?</h1>
-
-  <h4>Explore Discover Hockey and join the conversation</h4><br>
+<% else %>
   
-</div>
-
-<div class="center jumbotron">
-
-  <!--<%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>-->
-  <!--  <h2><a href="/static_pages/about.html">About Discover Hockey</a></h2> -->
-
-
-  <div>
-    <h2>
-      <!-- Button trigger modal -->
-    
-      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-        Sign up now!
-      </button>
+  <div class="center jumbotron">
+    <div class="center primary-graphic">
+      <%= link_to image_tag("bieksa-canucks.jpg", alt: "Bieksa photo"), "http://www.ebay.ca/itm/Kevin-Bieksa-Rookie-Card-478-UD-Young-Guns-05-06-Vancouver-/151528552537" %>
       
-      <!-- Modal -->
-      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h3 class="modal-title" id="myModalLabel">Select a play</h3>
+      <h3><a href="http://www.ebay.ca/itm/Kevin-Bieksa-Rookie-Card-478-UD-Young-Guns-05-06-Vancouver-/151528552537" target="_blank">
+  Kevin Bieksa</a> - Vancouver</h3>
+  
+    </div>
+    
+  </div>
+  
+  
+  <div class="center primary-greeting">
+    <h1>CANUCKS FAN?</h1>
+  
+    <h4>Explore Discover Hockey and join the conversation</h4><br>
+    
+  </div>
+  
+  <div class="center jumbotron">
+  
+    <!--<%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>-->
+    <!--  <h2><a href="/static_pages/about.html">About Discover Hockey</a></h2> -->
+  
+  
+    <div>
+      <h2>
+        <!-- Button trigger modal -->
+      
+        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+          Sign up now!
+        </button>
+        
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h3 class="modal-title" id="myModalLabel">Select a play</h3>
+              </div>
+              
+              <div class="modal-body">
+                <p><%= link_to "Create beta user account", signup_path %></p>
+                <p><%= link_to "Preview as Beta Guest", login_path %></p>
+  
+              </div>
+              <!--
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+              -->
+              
             </div>
-            
-            <div class="modal-body">
-              <p><%= link_to "Create beta user account", signup_path %></p>
-              <p><%= link_to "Preview as Beta Guest", login_path %></p>
-
-            </div>
-            <!--
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-            -->
-            
           </div>
         </div>
-      </div>
-    </h2>
+      </h2>
+    </div>
+  
+  
+    <h4><%= link_to "About Discover Hockey", about_path %></h4>
+  
+    <!-- <%= link_to image_tag("rails.png", alt: "Rails logo"), 'http://rubyonrails.org/' %> -->
+    
   </div>
 
-
-  <h4><%= link_to "About Discover Hockey", about_path %></h4>
-
-  <!-- <%= link_to image_tag("rails.png", alt: "Rails logo"), 'http://rubyonrails.org/' %> -->
-  
-</div>
+<% end %>

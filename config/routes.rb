@@ -19,6 +19,8 @@ Rails.application.routes.draw do
   resources :people
   # view created routes with: bundle exec rake routes
   
+  resources :posts, only: [:create, :destroy]
+  
 end
 
   # The priority is based upon order of creation: first created -> highest priority.
