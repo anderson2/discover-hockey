@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
 
   before_action :logged_in_person, only: [:create, :destroy]
+  before_action :correct_person, only: :destroy
 
   def create
     @post = current_person.posts.build(post_params)
@@ -8,6 +9,7 @@ class PostsController < ApplicationController
       flash[:success] = "New post created!"
       redirect_to root_url
     else
+      @feed_items = []
       render 'static_pages/home'
     end
     
@@ -15,6 +17,10 @@ class PostsController < ApplicationController
 
 
   def destroy
+    @post.destroy
+    flash[:success] = "Post deleted"
+    redirect_to request.referrer || root_url
+    
   end
 
 
@@ -24,5 +30,12 @@ class PostsController < ApplicationController
     def post_params
       params.require(:post).permit(:content)
     end
+    
+    def correct_person 
+      @post = current_person.posts.find_by(id: params[:id])
+      redirect_to root_url if @post.nil?
+      
+    end
+    
     
 end

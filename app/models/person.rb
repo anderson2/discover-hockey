@@ -48,4 +48,10 @@ class Person < ActiveRecord::Base
     update_attribute(:remember_digest, nil)
   end
   
+  
+  def feed
+    Post.where("person_id = ?", id)
+  end
+  
+  
 end
