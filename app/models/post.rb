@@ -15,8 +15,8 @@ class Post < ActiveRecord::Base
   
     # Validate file size constraint for uploaded image
     def picture_size
-      if picture.size > 700.kilobytes
-        errors.add(:picture, "should be less than 700KB")
+      if picture.size > 3500.kilobytes
+        errors.add(:picture, "should be less than 3.5MB")
       end
       
     end
