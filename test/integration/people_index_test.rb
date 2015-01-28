@@ -14,9 +14,9 @@ class PeopleIndexTest < ActionDispatch::IntegrationTest
     assert_select 'div.pagination'
     first_page_of_people = Person.paginate(page: 1)
     first_page_of_people.each do |person|
-      #assert_select 'a[href=?]', person_path(person), text: person.name
+      assert_select 'a[href=?]', person_path(person), text: person.name
       unless person == @admin
-        #assert_select 'a[href=?]', person_path(person), text: 'delete', method: :delete
+        assert_select 'a[href=?]', person_path(person), text: 'delete', method: :delete
       end
     end
     assert_difference 'Person.count', -1 do

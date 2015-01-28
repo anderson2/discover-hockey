@@ -1,4 +1,5 @@
-<%= form_for(current_person.active_relationships.build) do |f| %>
+<%= form_for(current_person.active_relationships.
+             build(followed_id: @person.id), remote: true) do |f| %>
   
   <div>
     <%= hidden_field_tag :followed_id, @person.id %>
