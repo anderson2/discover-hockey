@@ -12,6 +12,16 @@ cg:
   email: cg@exampletest.com
   password_digest: <%= Person.digest('password') %>
 
+rob:
+  name: Jane
+  email: jane@example.com
+  password_digest: <%= Person.digest('password') %>
+
+cg:
+  name: Bart
+  email: bart@exampletest.com
+  password_digest: <%= Person.digest('password') %>
+  
 <% 30.times do |n| %>
 person_<%= n %>:
   name:  <%= "Person #{n}" %>

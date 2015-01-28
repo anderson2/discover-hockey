@@ -38,3 +38,10 @@ people = Person.order(:created_at).take(6)
   people.each { |person| person.posts.create!(content: content) }
 end
 
+# Following relationships
+people = Person.all
+person  = people.first
+following = people[8..25]
+followers = people[3..17]
+following.each { |followed| person.follow(followed) }
+followers.each { |follower| follower.follow(person) }

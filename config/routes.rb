@@ -16,12 +16,20 @@ Rails.application.routes.draw do
   delete  'logout'  => 'sessions#destroy'
 
 
-  resources :people
-  # view created routes with: bundle exec rake routes
+  # to view routes created run: bundle exec rake routes
+
+  resources :people do
+    member do
+      get :following, :followers
+    end
+  end
+  
   
   resources :posts, only: [:create, :destroy]
+  resources :relationships, only: [:create, :destroy]
   
 end
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

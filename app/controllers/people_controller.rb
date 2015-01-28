@@ -1,6 +1,9 @@
 class PeopleController < ApplicationController
 
-  before_action :logged_in_person, only: [:index, :edit, :update, :destroy]
+  before_action :logged_in_person, only: [:index, :edit, 
+                                          :update, :destroy, 
+                                          :following, :followers]
+                                          
   before_action :correct_person,   only: [:edit, :update]  
   before_action :admin_person,     only: :destroy
 
@@ -61,7 +64,20 @@ class PeopleController < ApplicationController
     redirect_to people_url
   end
 
+  def following
+    @title = "Following"
+    @person  = Person.find(params[:id])
+    @people = @person.following.paginate(page: params[:page])
+    render 'show_follow'
+  end
 
+  def followers
+    @title = "Followers"
+    @person  = Person.find(params[:id])
+    @people = @person.followers.paginate(page: params[:page])
+    render 'show_follow'
+  end
+  
 
   private
 
