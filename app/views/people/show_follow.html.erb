@@ -14,7 +14,7 @@
       <% if @people.any? %>
         <div class="person_avatars">
           <% @people.each do |person| %>
-            <%= link_to gravatar_for(person, size: 20), person %>
+            <%= link_to gravatar_for(person, size: 30), person %>
           <% end %>
         </div>
       <% end %>
