@@ -29,6 +29,19 @@ class Person < ActiveRecord::Base
   validates :password, length: { minimum: 6 }, allow_blank: true                
 
 
+
+  ### Added 2015-01-29
+
+  mount_uploader :picture, PictureUploader
+  validate :picture_size
+
+
+
+  ###
+
+
+
+
   # Return the hash digest of the given string
   def Person.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
@@ -82,5 +95,22 @@ class Person < ActiveRecord::Base
     following.include?(other_person)
   end
 
+  
+
+
+  ### Added 2015-01-29
+
+  private
+  
+    # Validate file size constraint for uploaded image
+    def picture_size
+      if picture.size > 3500.kilobytes
+        errors.add(:picture, "should be less than 3.5MB")
+      end
+      
+    end
+
+
+  ###  
   
 end

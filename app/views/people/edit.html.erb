@@ -4,7 +4,7 @@
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <%= form_for(@person) do |f| %>
+    <%= form_for(@person, html: { multipart: true }) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
 
       <%= f.label :name %>
@@ -24,7 +24,16 @@
       <%= f.password_field :password_confirmation, class: 'form-control' %>
 
       <%= f.submit "Save changes", class: "btn btn-primary" %>
+      
+      <span class="picture">
+        <%= f.file_field :picture %>
+      </span>      
+      
     <% end %>
+
+    <div class="gravatar_edit">
+        <%= image_tag @person.picture.url if @person.picture? %>
+    </div>
 
     <div class="gravatar_edit">
       <%= gravatar_for @person %>

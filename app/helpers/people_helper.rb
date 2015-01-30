@@ -7,5 +7,9 @@ module PeopleHelper
     gravatar_url = "https://secure.gravatar.com/avatar/#{gravatar_id}?s=#{size}"
     image_tag(gravatar_url, alt: person.name, class: "gravatar")
   end 
-  
+
+  def profile_image_for(person)
+    image_tag @person.picture.url if @person.picture?
+  end
+ 
 end

@@ -8,11 +8,22 @@
 
 
     <section class = "person_info">
-      <h1>
-        <%= gravatar_for @person %>
-        <%= @person.name %>
-      </h1>
+
       
+      <h1>
+        <!-- <%= gravatar_for @person %> -->
+
+        
+        <!-- Added 2015-01-29 -->
+        <%= image_tag @person.picture.url if @person.picture? %>
+        <!--                  -->
+        
+      </h1>
+      <h1>
+        <%= @person.name %>
+
+      </h1>
+      <p>. . .</p>
       <p>About <%= @person.name%></p>
       <p>Here's some info about me!</p>
       <p>Name: <%= @person.name%></p>
