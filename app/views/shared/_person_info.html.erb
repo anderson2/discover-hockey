@@ -5,3 +5,12 @@
 <h1><%= current_person.name %></h1>
 <span><%= link_to "view my profile", current_person %></span>
 <span><%= pluralize(current_person.posts.count, "post") %></span>
+
+      <h1> 
+        <% if current_person.picture? %>
+          <%= image_tag( current_person.picture.url, width: '250') %>
+        <% else %>
+          <%= gravatar_for current_person %>
+        <% end %>
+        
+      </h1>

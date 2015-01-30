@@ -10,15 +10,16 @@
     <section class = "person_info">
 
       
-      <h1>
-        <!-- <%= gravatar_for @person %> -->
 
-        
-        <!-- Added 2015-01-29 -->
-        <%= image_tag @person.picture.url if @person.picture? %>
-        <!--                  -->
+      <h1> 
+        <% if @person.picture? %>
+          <%= image_tag( @person.picture.url, width: '250') %>
+        <% else %>
+          <%= gravatar_for @person %>
+        <% end %>
         
       </h1>
+      
       <h1>
         <%= @person.name %>
 
