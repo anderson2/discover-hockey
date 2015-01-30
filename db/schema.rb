@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150127035640) do
+ActiveRecord::Schema.define(version: 20150130003636) do
 
   create_table "people", force: :cascade do |t|
     t.string   "name"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20150127035640) do
     t.string   "password_digest"
     t.string   "remember_digest"
     t.boolean  "admin",           default: false
+    t.string   "team"
   end
 
   add_index "people", ["email"], name: "index_people_on_email", unique: true
