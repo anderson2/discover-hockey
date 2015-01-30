@@ -1,4 +1,12 @@
 <li id="post-<%= post.id %>">
+  
+          <% if post.person.picture? %>
+          <%= link_to image_tag( post.person.picture.url, width: '80'), post.person %>
+        <% else %>
+          <%= link_to gravatar_for(post.person, size: 20), post.person %>
+        <% end %>
+  
+  
   <%= link_to gravatar_for(post.person, size: 20), post.person %>
   
   <span class="person"><%= link_to post.person.name, post.person %></span>
