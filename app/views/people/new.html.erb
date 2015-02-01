@@ -1,21 +1,12 @@
 <% provide(:title, 'Sign up') %>
 
 <div class="center">
-  <h1>Welcome!</h1>
-  <h4>Accepting new sign ups beginning February 2015</h4>
-  <h5>(or see below to sign up as a beta user)</h5><br/>
-
-  
-  <div class="center jumbotron">
-    <%= image_tag "linden-canucks.jpg" %>
-  </div>
+  <h1>Sign up</h1>
   
 </div>
 
 
 <div class="center">
-
-  <h3>Beta user sign up</h3>
 
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
@@ -31,10 +22,10 @@
         <%= f.label :password %>
         <%= f.password_field :password, class: 'form-control' %>
   
-        <%= f.label :password_confirmation, "Confirmation" %>
+        <%= f.label :password_confirmation, "Password Confirmation" %>
         <%= f.password_field :password_confirmation, class: 'form-control' %>
 
-        <%= f.label :team %>
+        <%= f.label :team, "Favorite Team" %>
         <%= f.text_field :team, class: 'form-control' %>
         
         <%= f.submit "Create my account", class: "btn btn-primary" %>
@@ -43,8 +34,12 @@
   </div>
 
   <br><br>
-  <h4>Help <%= link_to "test drive", login_path %> and beta test Discover Hockey</h4>
+  <h4>Thanks for helping <%= link_to "test drive", login_path %> Discover Hockey</h4>
   <h5>Your comments and feedback are welcome!!</h5><br/>
 
 </div>
 
+<div class="center jumbotron">
+  <%= image_tag "linden-canucks.jpg" %>
+</div>
+  

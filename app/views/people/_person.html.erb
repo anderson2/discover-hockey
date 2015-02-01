@@ -1,7 +1,15 @@
 <li>
 
-  <%= gravatar_for person, size: 35 %>
-  <%= link_to person.name, person %>
+  <!-- <%= gravatar_for person, size: 35 %> -->
+  
+  <% if person.picture? %>
+    <%= link_to image_tag( person.picture.url, width: '150'), person %>
+  <% else %>
+    <%= gravatar_for person %>
+  <% end %>  
+  
+  <%= link_to person.name, person %>  
+  
 
   <% if current_person.admin? && !current_person?(person) %>
     | <%= link_to "delete", person, method: :delete,
