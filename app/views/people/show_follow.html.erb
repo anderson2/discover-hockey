@@ -3,7 +3,16 @@
   <aside class="col-md-4">
     
     <section class="person_info">
-      <%= gravatar_for @person %>
+      
+      <h1> 
+        <% if @person.picture? %>
+          <%= image_tag( @person.picture.url, width: '150') %>
+        <% else %>
+          <%= gravatar_for @person %>
+        <% end %>
+        
+      </h1>
+      <!-- <%= gravatar_for @person %> -->
       <h1><%= @person.name %></h1>
       <span><%= link_to "View my profile", @person %></span>
       <span><b>Posts:</b> <%= @person.posts.count %></span>
@@ -14,7 +23,9 @@
       <% if @people.any? %>
         <div class="person_avatars">
           <% @people.each do |person| %>
-            <%= link_to gravatar_for(person, size: 30), person %>
+            <%= link_to image_tag( person.picture.url, width: '50'), person %>
+
+            <!-- <%= link_to gravatar_for(person, size: 30), person %> -->
           <% end %>
         </div>
       <% end %>
