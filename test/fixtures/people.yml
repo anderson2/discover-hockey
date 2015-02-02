@@ -12,12 +12,12 @@ cg:
   email: cg@exampletest.com
   password_digest: <%= Person.digest('password') %>
 
-rob:
+jane:
   name: Jane
   email: jane@example.com
   password_digest: <%= Person.digest('password') %>
 
-cg:
+bart:
   name: Bart
   email: bart@exampletest.com
   password_digest: <%= Person.digest('password') %>

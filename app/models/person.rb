@@ -74,12 +74,22 @@ class Person < ActiveRecord::Base
     update_attribute(:remember_digest, nil)
   end
   
+  # Returns a user's status feed.
+  #def feed
+  #  Post.where("person_id = ?", id)
+  #end
   
-  def feed
-    Post.where("person_id = ?", id)
-  end
-  
+  #def feed
+  #  Post.where("person_id IN (?) OR person_id = ?", following_ids, id)
+  #end  
 
+  def feed
+    following_ids = "SELECT followed_id FROM relationships
+                     WHERE  follower_id = :person_id"
+                     
+    Post.where("person_id IN (#{following_ids}) OR person_id = :person_id", person_id: id)
+  end 
+  
   # Follows a hockey player or another user
   def follow(other_person)
     active_relationships.create(followed_id: other_person.id)
