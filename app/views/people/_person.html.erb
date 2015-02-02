@@ -3,9 +3,9 @@
   <!-- <%= gravatar_for person, size: 35 %> -->
   
   <% if person.picture? %>
-    <%= link_to image_tag( person.picture.url, width: '150'), person %>
+    <%= link_to image_tag( person.picture.url, width: '125'), person %>
   <% else %>
-    <%= gravatar_for person %>
+    <%= gravatar_for person, size: 125 %>
   <% end %>  
   
   <%= link_to person.name, person %>  

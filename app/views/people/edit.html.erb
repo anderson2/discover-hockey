@@ -17,11 +17,11 @@
     <%= form_for(@person, html: { multipart: true }) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
 
-      <%= f.label :name %>
+      <%= f.label :name, "Display Name" %>
       <%= f.text_field :name, class: 'form-control' %>
       
 
-      <%= f.label :email %>
+      <%= f.label :email, "Username/Email" %>
       <%= f.email_field :email, class: 'form-control' %>
 
       <%= f.label :picture, "Profile Image" %>
