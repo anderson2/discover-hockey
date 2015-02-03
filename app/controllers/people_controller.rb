@@ -88,7 +88,7 @@ class PeopleController < ApplicationController
                                      :picture, 
                                      ###
                                      
-                                     #:summary,
+                                     :summary,
                                      :password, :password_confirmation)
     end
     

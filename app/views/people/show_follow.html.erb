@@ -23,9 +23,12 @@
       <% if @people.any? %>
         <div class="person_avatars">
           <% @people.each do |person| %>
-            <%= link_to image_tag( person.picture.url, width: '50'), person %>
-
-            <!-- <%= link_to gravatar_for(person, size: 30), person %> -->
+            <% if person.picture? %>
+              <%= link_to image_tag( person.picture.url, height: '50'), person %>
+            <% else %>
+              <%= link_to gravatar_for(person, size: 50), person %>
+            <% end %>
+            
           <% end %>
         </div>
       <% end %>

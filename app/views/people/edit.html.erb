@@ -26,8 +26,11 @@
 
       <%= f.label :picture, "Profile Image" %>
       <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png', class: 'form-control' %>
+       
+      <%= f.label :summary, "About Me (optional)" %>
+      <%= f.text_area :summary, class: 'form-control' %>
       
-      <%= f.label :team, "Favorite Team" %>
+      <%= f.label :team, "Favorite Team(s)" %>
       <%= f.text_field :team, class: 'form-control' %>
 
       <%= f.label :password %>
