@@ -25,16 +25,36 @@
   
 <% else %>
   
+
   <div class="center jumbotron">
-    <div class="center primary-graphic">
-      <%= link_to image_tag("bieksa-canucks.jpg", alt: "Bieksa photo"), "https://discover-hockey.herokuapp.com/people/2" %>
-      
-      <h3><a href="https://discover-hockey.herokuapp.com/people/2" >
-  Kevin Bieksa</a> - Vancouver</h3>
-  
+    <div id="carousel-home-page" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#carousel-home-page" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-home-page" data-slide-to="1"></li>
+        <li data-target="#carousel-home-page" data-slide-to="2"></li>
+      </ol>
+    
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <%= link_to image_tag("bieksa-canucks.jpg", alt: "Bieksa photo"), "https://discover-hockey.herokuapp.com/people/2" %>
+        </div>
+        <div class="item">
+          <%= link_to image_tag("turris-coyotes.jpg", alt: "Turris photo"), "https://discover-hockey.herokuapp.com/people/6" %>
+        </div>
+        <div class="item">
+          <%= link_to image_tag("linden-canucks.jpg", alt: "Linden photo"), "https://discover-hockey.herokuapp.com/people/1" %>
+        </div>
+        
+      </div>
+
     </div>
+
+    <div class="center primary-graphic"></div>
     
   </div>
+
   
   
   <div class="center primary-greeting">
