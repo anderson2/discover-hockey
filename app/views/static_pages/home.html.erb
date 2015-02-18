@@ -33,18 +33,32 @@
         <li data-target="#carousel-home-page" data-slide-to="0" class="active"></li>
         <li data-target="#carousel-home-page" data-slide-to="1"></li>
         <li data-target="#carousel-home-page" data-slide-to="2"></li>
+        <li data-target="#carousel-home-page" data-slide-to="3"></li>
+        <li data-target="#carousel-home-page" data-slide-to="4"></li>
+
       </ol>
     
       <!-- Wrapper for slides -->
       <div class="carousel-inner" role="listbox">
         <div class="item active">
-          <%= link_to image_tag("bieksa-canucks.jpg", alt: "Bieksa photo"), "https://discover-hockey.herokuapp.com/people/2" %>
+          <%= link_to image_tag("https://discover-hockey-assets.s3.amazonaws.com/uploads/post/picture/26/bieksa-canucks.jpg", 
+              alt: "Bieksa photo"), "https://discover-hockey.herokuapp.com/people/2" %>
         </div>
         <div class="item">
-          <%= link_to image_tag("turris-coyotes.jpg", alt: "Turris photo"), "https://discover-hockey.herokuapp.com/people/6" %>
+          <%= link_to image_tag("https://discover-hockey-assets.s3.amazonaws.com/uploads/person/picture/1/linden-canucks.jpg", 
+              alt: "Linden photo"), "https://discover-hockey.herokuapp.com/people/1" %>
         </div>
         <div class="item">
-          <%= link_to image_tag("linden-canucks.jpg", alt: "Linden photo"), "https://discover-hockey.herokuapp.com/people/1" %>
+          <%= link_to image_tag("https://discover-hockey-assets.s3.amazonaws.com/uploads/post/picture/30/toews-chicago.jpg", 
+              alt: "Toews photo"), "https://discover-hockey.herokuapp.com/people/16" %>
+        </div>
+        <div class="item"> 
+          <%= link_to image_tag("https://discover-hockey-assets.s3.amazonaws.com/uploads/post/picture/11/kyle-turris-rookie.jpg", 
+              alt: "Turris photo"), "https://discover-hockey.herokuapp.com/people/6" %>
+        </div>
+        <div class="item">
+          <%= link_to image_tag("https://discover-hockey-assets.s3.amazonaws.com/uploads/post/picture/2/sedin-twins-luongo.jpg", 
+              alt: "Sedins Twins photo"), "https://discover-hockey.herokuapp.com/people/10" %>
         </div>
         
       </div>
@@ -58,7 +72,7 @@
   
   
   <div class="center primary-greeting">
-    <h1>CANUCKS FAN?</h1>
+    <h1>HOCKEY FAN?</h1>
   
     <h4>Explore Discover Hockey and join the conversation</h4><br>
     
